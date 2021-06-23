@@ -34,4 +34,37 @@ class StringUtilTest {
         );
 
     }
+
+    //------------ TEST para el metodo isEmpty ------------------\\
+    @Test()
+    public void not_is_empty() {
+
+        boolean result = StringUtil.isEmpty("No soy empty");
+
+        Assertions.assertFalse(result);
+    }
+
+    @Test()
+    public void is_empty() {
+
+        boolean result = StringUtil.isEmpty("");
+
+        Assertions.assertTrue(result);
+    }
+
+    @Test()
+    public void is_null() {
+
+        Assertions.assertThrows(NullPointerException.class, () -> {
+           StringUtil.isEmpty(null);
+        });
+    }
+
+    @Test()
+    public void is_empty_with_spaces() {
+
+        boolean result = StringUtil.isEmpty("       ");
+
+        Assertions.assertTrue(result);
+    }
 }

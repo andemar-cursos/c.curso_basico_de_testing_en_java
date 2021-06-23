@@ -17,4 +17,15 @@ public class StringUtil {
         return result;
     }
 
+
+    public static boolean isEmpty(String str) {
+
+        if(str == null)
+            throw new NullPointerException("Is null");
+
+        str = str.trim();
+
+        return str.isEmpty();
+    }
+
 }
